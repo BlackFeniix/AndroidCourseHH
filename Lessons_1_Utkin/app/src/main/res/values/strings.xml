@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lessons_1_Utkin</string>
+    <string name="first_activity">First Activity</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="search">Search</string>
+    <string name="show">Show</string>
+    <string name="save">Save</string>
+</resources>
