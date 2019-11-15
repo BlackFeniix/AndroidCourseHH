@@ -19,8 +19,8 @@ public class FirstActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first);
 
-        Button saveStudent = findViewById(R.id.saveButton);
-        Button showStudents = findViewById(R.id.showButton);
+        Button saveStudent = findViewById(R.id.buttonSaveStudent);
+        Button showStudents = findViewById(R.id.buttonShowStudent);
 
         saveStudent.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -8,35 +8,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.Map;
-
-class Student
-{
-    public int id;
-    private String name;
-    private String surname;
-    private String grade;
-    private int birthdayYear;
-
-    public Student(String inputData)
-    {
-        String[] parts = inputData.split(" ");
-
-        id = (int) System.currentTimeMillis();
-        name = parts[0];
-        surname = parts[1];
-        grade = parts[2];
-        birthdayYear = Integer.parseInt(parts[3]);
-    }
-
-    public String toString()
-    {
-        return id + " " + name + " "+ surname + " " + grade + " " + birthdayYear;
-    }
-}
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -47,7 +21,7 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        Button showButton = findViewById(R.id.showButtonSecondActivity);
+        Button showStudents = findViewById(R.id.buttonShowAllStudents);
 
         final TextView textView = findViewById(R.id.textView);
         final EditText editData = findViewById(R.id.editData);
@@ -72,7 +46,7 @@ public class SecondActivity extends AppCompatActivity {
             return false; }
         });
 
-        showButton.setOnClickListener(new View.OnClickListener() {
+        showStudents.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 textView.setText("");

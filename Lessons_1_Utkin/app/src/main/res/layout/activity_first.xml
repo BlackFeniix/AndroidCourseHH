@@ -13,7 +13,7 @@
         android:orientation="vertical">
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/showButton"
+            android:id="@+id/buttonShowStudent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/show"
@@ -21,7 +21,7 @@
         </androidx.appcompat.widget.AppCompatButton>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/saveButton"
+            android:id="@+id/buttonSaveStudent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/save">
