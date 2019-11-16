@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Lesson_2_Utkin</string>
+    <string name="first_activity">Первое активити</string>
+    <string name="second_activity">Второе активити</string>
+    <string name="textViewPushkin">У лукоморья дуб зеленый;
+        Златая цепь на дубе том:
+        И днем и ночью кот ученый
+        Все ходит по цепи кругом;
+    </string>
+
+</resources>

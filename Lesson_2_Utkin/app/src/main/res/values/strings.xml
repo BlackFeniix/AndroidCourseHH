@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Lesson_2_Utkin</string>
+    <string name="first_activity">First Activity</string>
+    <string name="second_activity">Second Activity</string>
+    <string name="textViewPushkin">Sorry, there is nothing</string>
+    <string name="pushkin_signature">Image with Pushkin`s signature</string>
+    <string name="bittonTextFirstActivity">Боль и страдание</string>
+</resources>
