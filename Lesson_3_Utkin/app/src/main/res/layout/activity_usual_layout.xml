@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ConstraintLayoutActivity">
+
+        <include
+            layout="@layout/toolbar"
+            android:id="@+id/layoutToolbar">
+        </include>
+
+        <RelativeLayout
+            android:id="@id/layoutCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/sunflower"
+            android:theme="@style/AppTheme"
+            android:layout_below="@id/layoutToolbar">
+
+            <RelativeLayout
+                android:id="@+id/layoutCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="17dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/imageViewSpecialist"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="18dp"
+                    android:layout_marginBottom="16dp"
+
+
+                    android:src="@mipmap/ic_profile_spechialist"
+                    app:srcCompat="@mipmap/ic_profile_spechialist" />
+
+                <TextView
+                    android:id="@+id/textViewCardText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+
+                    android:layout_marginStart="18dp"
+                    android:layout_marginTop="33dp"
+                    android:layout_marginBottom="23dp"
+
+                    android:layout_toEndOf="@id/imageViewSpecialist"
+                    style="@style/TextStyle2"
+                    tools:text="Карта №7898769 \nСпециалист" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/textViewPrivateData"
+            style="@style/TextStyle3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+
+            android:layout_below="@id/layoutCard"
+            android:text="Личные данные" />
+
+        <TextView
+            android:id="@+id/textViewGreyNameField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+
+            style="@style/TextStyle"
+            android:layout_below="@id/textViewPrivateData"
+            app:lineHeight="20sp"
+            android:text="Имя">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/textViewGreyNameField"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+
+            style="@style/TextStyle2"
+            app:lineHeight="24sp"
+
+            tools:text="Анастасия" />
+
+        <TextView
+            android:id="@+id/textViewGreySurnameField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+
+            style="@style/TextStyle"
+            android:layout_below="@id/textViewName"
+            app:lineHeight="20sp"
+            android:text="Фамилия">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewSurname"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:layout_below="@id/textViewGreySurnameField"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+
+            style="@style/TextStyle2"
+            app:lineHeight="24sp"
+            tools:text="Антонина" />
+
+        <TextView
+            android:id="@+id/textViewGreyEmailField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+
+            style="@style/TextStyle"
+            android:layout_below="@id/textViewSurname"
+            app:lineHeight="20sp"
+            android:text="E-mail">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+
+            style="@style/TextStyle2"
+            android:layout_below="@id/textViewGreyEmailField"
+            app:lineHeight="24sp"
+
+            tools:text="anykee.box@gmail.ru">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewGreyLoginField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+
+            style="@style/TextStyle"
+            android:layout_below="@id/textViewEmail"
+            app:lineHeight="20sp"
+            android:text="Логин">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+
+            style="@style/TextStyle2"
+            android:layout_below="@id/textViewGreyLoginField"
+            app:lineHeight="24sp"
+
+            tools:text="HIE023UOI88">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewGreyRegionField"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="17dp"
+
+            style="@style/TextStyle"
+            android:layout_below="@id/textViewLogin"
+            app:lineHeight="20sp"
+            android:text="Ваш регион">
+        </TextView>
+
+        <TextView
+            android:id="@+id/textViewRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="9dp"
+            style="@style/TextStyle2"
+
+            android:layout_below="@id/textViewGreyRegionField"
+
+            tools:text="Saransk">
+        </TextView>
+
+        <ImageButton
+            style="@style/Widget.AppCompat.ImageButton"
+            android:id="@+id/buttonEditRegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:background="?attr/selectableItemBackground"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_edit_black_24_px"
+
+            android:layout_alignParentEnd = "true"
+            android:layout_alignTop="@id/textViewGreyRegionField">
+        </ImageButton>
+
+        <Button
+            android:id="@+id/buttonExitFromAccount"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="145dp"
+            android:background="?attr/selectableItemBackground"
+
+            android:layout_below="@id/textViewRegion"
+
+            android:drawableStart="@drawable/ic_menu_exit"
+            android:text="Выйти из аккаунта">
+        </Button>
+    </RelativeLayout>
+</ScrollView>
