@@ -58,7 +58,7 @@
                     android:layout_marginBottom="23dp"
 
                     android:layout_toEndOf="@id/imageViewSpecialist"
-                    style="@style/TextStyle2"
+                    style="@style/TextUserDataStyle"
                     tools:text="Карта №7898769 \nСпециалист" />
             </RelativeLayout>
 
@@ -66,14 +66,14 @@
 
         <TextView
             android:id="@+id/textViewPrivateData"
-            style="@style/TextStyle3"
+            style="@style/TextYellowStringStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="30dp"
 
             android:layout_below="@id/layoutCard"
-            android:text="Личные данные" />
+            android:text="@string/private_data" />
 
         <TextView
             android:id="@+id/textViewGreyNameField"
@@ -82,10 +82,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
 
-            style="@style/TextStyle"
+            style="@style/TextGreyFieldStyle"
             android:layout_below="@id/textViewPrivateData"
             app:lineHeight="20sp"
-            android:text="Имя">
+            android:text="@string/name">
         </TextView>
 
         <TextView
@@ -98,7 +98,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="9dp"
 
-            style="@style/TextStyle2"
+            style="@style/TextUserDataStyle"
             app:lineHeight="24sp"
 
             tools:text="Анастасия" />
@@ -110,10 +110,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
 
-            style="@style/TextStyle"
+            style="@style/TextGreyFieldStyle"
             android:layout_below="@id/textViewName"
             app:lineHeight="20sp"
-            android:text="Фамилия">
+            android:text="@string/surname">
         </TextView>
 
         <TextView
@@ -126,7 +126,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="9dp"
 
-            style="@style/TextStyle2"
+            style="@style/TextUserDataStyle"
             app:lineHeight="24sp"
             tools:text="Антонина" />
 
@@ -137,10 +137,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
 
-            style="@style/TextStyle"
+            style="@style/TextGreyFieldStyle"
             android:layout_below="@id/textViewSurname"
             app:lineHeight="20sp"
-            android:text="E-mail">
+            android:text="@string/email">
         </TextView>
 
         <TextView
@@ -152,7 +152,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="9dp"
 
-            style="@style/TextStyle2"
+            style="@style/TextUserDataStyle"
             android:layout_below="@id/textViewGreyEmailField"
             app:lineHeight="24sp"
 
@@ -166,10 +166,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
 
-            style="@style/TextStyle"
+            style="@style/TextGreyFieldStyle"
             android:layout_below="@id/textViewEmail"
             app:lineHeight="20sp"
-            android:text="Логин">
+            android:text="@string/login">
         </TextView>
 
         <TextView
@@ -181,7 +181,7 @@
             android:layout_marginTop="2dp"
             android:layout_marginBottom="9dp"
 
-            style="@style/TextStyle2"
+            style="@style/TextUserDataStyle"
             android:layout_below="@id/textViewGreyLoginField"
             app:lineHeight="24sp"
 
@@ -195,10 +195,10 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="17dp"
 
-            style="@style/TextStyle"
+            style="@style/TextGreyFieldStyle"
             android:layout_below="@id/textViewLogin"
             app:lineHeight="20sp"
-            android:text="Ваш регион">
+            android:text="@string/your_region">
         </TextView>
 
         <TextView
@@ -209,7 +209,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="9dp"
-            style="@style/TextStyle2"
+            style="@style/TextUserDataStyle"
 
             android:layout_below="@id/textViewGreyRegionField"
 
@@ -217,19 +217,17 @@
         </TextView>
 
         <ImageButton
-            style="@style/Widget.AppCompat.ImageButton"
             android:id="@+id/buttonEditRegion"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="7dp"
+            style="@style/Widget.AppCompat.ImageButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_alignTop="@id/textViewGreyRegionField"
+            android:layout_alignParentEnd="true"
             android:layout_marginEnd="16dp"
             android:background="?attr/selectableItemBackground"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_edit_black_24_px"
 
-            android:layout_alignParentEnd = "true"
-            android:layout_alignTop="@id/textViewGreyRegionField">
-        </ImageButton>
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_edit_black_24_px" />
 
         <Button
             android:id="@+id/buttonExitFromAccount"
@@ -244,7 +242,7 @@
             android:layout_below="@id/textViewRegion"
 
             android:drawableStart="@drawable/ic_menu_exit"
-            android:text="Выйти из аккаунта">
+            android:text="@string/log_out">
         </Button>
     </RelativeLayout>
 </ScrollView>

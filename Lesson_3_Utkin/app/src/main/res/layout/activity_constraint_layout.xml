@@ -49,7 +49,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@mipmap/ic_profile_spechialist"
-                android:contentDescription="Icon of user account" />
+                android:contentDescription="@string/icon_of_user_account" />
 
             <TextView
                 android:id="@+id/textViewCardText"
@@ -58,7 +58,7 @@
                 android:layout_marginTop="33dp"
                 android:layout_marginBottom="23dp"
 
-                style="@style/TextStyle2"
+                style="@style/TextUserDataStyle"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -80,7 +80,7 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layoutCard"
-        android:text="Личные данные" />
+        android:text="@string/private_data" />
 
     <TextView
         android:id="@+id/textViewGreyNameField"
@@ -89,11 +89,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
 
-        style="@style/TextStyle"
+        style="@style/TextGreyFieldStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewPrivateData"
         app:lineHeight="20sp"
-        android:text="Имя">
+        android:text="@string/name">
     </TextView>
 
     <TextView
@@ -105,7 +105,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
 
-        style="@style/TextStyle2"
+        style="@style/TextUserDataStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGreyNameField"
         app:lineHeight="24sp"
@@ -121,11 +121,11 @@
         android:layout_marginTop="17dp"
 
 
-        style="@style/TextStyle"
+        style="@style/TextGreyFieldStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewName"
         app:lineHeight="20sp"
-        android:text="Фамилия">
+        android:text="@string/surname">
     </TextView>
 
     <TextView
@@ -137,7 +137,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
 
-        style="@style/TextStyle2"
+        style="@style/TextUserDataStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGreySurnameField"
         app:lineHeight="24sp"
@@ -152,11 +152,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
 
-        style="@style/TextStyle"
+        style="@style/TextGreyFieldStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewSurname"
         app:lineHeight="20sp"
-        android:text="E-mail">
+        android:text="@string/email">
     </TextView>
 
     <TextView
@@ -168,7 +168,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
 
-        style="@style/TextStyle2"
+        style="@style/TextUserDataStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGreyEmailField"
         app:lineHeight="24sp"
@@ -183,11 +183,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
 
-        style="@style/TextStyle"
+        style="@style/TextGreyFieldStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewEmail"
         app:lineHeight="20sp"
-        android:text="Логин">
+        android:text="@string/login">
     </TextView>
 
     <TextView
@@ -199,7 +199,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
 
-        style="@style/TextStyle2"
+        style="@style/TextUserDataStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGreyLoginField"
         app:lineHeight="24sp"
@@ -214,11 +214,11 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="17dp"
 
-        style="@style/TextStyle"
+        style="@style/TextGreyFieldStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewLogin"
         app:lineHeight="20sp"
-        android:text="Ваш регион">
+        android:text="@string/your_region">
     </TextView>
 
     <TextView
@@ -230,7 +230,7 @@
         android:layout_marginTop="2dp"
         android:layout_marginBottom="9dp"
 
-        style="@style/TextStyle2"
+        style="@style/TextUserDataStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewGreyRegionField"
         app:lineHeight="24sp"
@@ -240,12 +240,11 @@
 
     <ImageButton
         android:id="@+id/buttonEditRegion"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="16dp"
+        style="@style/TextUserDataStyle"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
 
-        style="@style/TextStyle2"
+        android:layout_marginEnd="16dp"
         android:background="?attr/selectableItemBackground"
         android:scaleType="centerInside"
         android:src="@drawable/ic_edit_black_24_px"
@@ -265,7 +264,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewRegion"
         android:drawableStart="@drawable/ic_menu_exit"
-        android:text="Выйти из аккаунта">
+        android:text="@string/log_out">
     </Button>
 </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

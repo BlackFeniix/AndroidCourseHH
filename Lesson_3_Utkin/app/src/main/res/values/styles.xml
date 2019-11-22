@@ -17,7 +17,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="TextStyle2">
+    <style name="TextUserDataStyle">
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">normal</item>
@@ -25,14 +25,14 @@
         <item name="android:textColor">@color/greyish_brown</item>
     </style>
 
-    <style name="TextStyle3">
+    <style name="TextYellowStringStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="android:textStyle">normal</item>
         <item name="android:textColor">@color/squash</item>
     </style>
 
-    <style name="TextStyle">
+    <style name="TextGreyFieldStyle">
         <item name="android:textSize">14sp</item>
         <item name="android:fontFamily">sans-serif</item>
         <item name="android:textStyle">normal</item>
