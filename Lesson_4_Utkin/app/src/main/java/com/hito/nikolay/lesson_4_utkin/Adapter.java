@@ -4,14 +4,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
+public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
+    private static final int SERVICE_TYPE = 0;
+    private static final int HELP_TYPE = 1;
+
     private BaseInfo[] mDataset;
+    private CustomItemClickListener adapterClickListener;
 
     public Adapter(BaseInfo[] myDataset){
         mDataset=myDataset;
@@ -19,69 +21,59 @@ public class Adapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull final ViewGroup parent, int viewType) {
         switch (viewType) {
-            case 0:
-                View view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.item_recycler_service, parent, false);
-                return new ViewHolderService(view);
-
-            case 1:
-                View view2 = LayoutInflater.from(parent.getContext())
+            case HELP_TYPE:
+                View viewHelp = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.item_recycler_help, parent, false);
-                return new ViewHolderHelp(view2);
+                return new ViewHolderHelp(viewHelp, adapterClickListener);
 
             default:
-                View view3 = LayoutInflater.from(parent.getContext())
+                final View viewService = LayoutInflater.from(parent.getContext())
                         .inflate(R.layout.item_recycler_service, parent, false);
-                return new ViewHolderService(view3);
+                return new ViewHolderService(viewService,adapterClickListener);
         }
-
     }
 
     @Override
     public void onBindViewHolder(final RecyclerView.ViewHolder holder, final int position) {
-
         switch (holder.getItemViewType()) {
-            case 0:
+            case SERVICE_TYPE:
                 ViewHolderService viewHolder0 = (ViewHolderService)holder;
                 viewHolder0.bind((DetailInfo) mDataset[position]);
                 break;
 
-            case 1:
+            case HELP_TYPE:
                 ViewHolderHelp viewHolder2 = (ViewHolderHelp)holder;
                 viewHolder2.bind(mDataset[position]);
                 break;
         }
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar mySnackBar;
-                mySnackBar = Snackbar.make(
-                        holder.itemView, mDataset[position].title, Snackbar.LENGTH_LONG);
-                mySnackBar.show();
-            }
-        });
     }
 
     @Override
     public int getItemViewType(int position) {
-        // Just as an example, return 0 or 2 depending on position
-        // Note that unlike in ListView adapters, types don't have to be contiguous
-        if (position+1< mDataset.length && !(mDataset[position+1] instanceof DetailInfo) &&
-                mDataset[position] instanceof DetailInfo)
+        if (position %2 ==0 && mDataset[position] instanceof DetailInfo &&
+                (position+1< mDataset.length && !(mDataset[position+1] instanceof DetailInfo) ||
+                        position+1==mDataset.length  ))
         {
-            return 1;
+            return HELP_TYPE;
         }
         if (mDataset[position] instanceof DetailInfo)
-            return 0;
+            return SERVICE_TYPE;
         else
-            return 1;
+            return HELP_TYPE;
     }
 
     @Override
     public int getItemCount() {
         return mDataset.length;
     }
+
+    public interface CustomItemClickListener {
+        void onItemClick(View view, int position);
+    }
+    public void setCustomItemClickListener(CustomItemClickListener customItemClickListener) {
+        this.adapterClickListener = customItemClickListener;
+    }
 }
+

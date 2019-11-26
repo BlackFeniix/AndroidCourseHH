@@ -1,7 +1,5 @@
 package com.hito.nikolay.lesson_4_utkin;
 
-import android.graphics.drawable.Drawable;
-
 public class BaseInfo {
     protected String title;
     protected int image;

@@ -7,10 +7,12 @@
         android:id="@+id/itemMenuInfo"
         android:icon="@drawable/ic_info_white"
         android:title="@string/info_menu"
+        android:background="?attr/selectableItemBackground"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/itemMenuHome"
         android:icon="@drawable/ic_home"
+        android:background="?attr/selectableItemBackground"
         android:title="@string/home"
         app:showAsAction="ifRoom" />
 </menu>

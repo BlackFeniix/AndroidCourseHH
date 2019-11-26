@@ -2,7 +2,6 @@ package com.hito.nikolay.lesson_4_utkin;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -10,9 +9,14 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
+
 public class MainActivity extends AppCompatActivity {
+    public static final int SPAN_SIZE_1 = 1;
+    public static final int SPAN_SIZE_2 = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,48 +53,54 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        final RecyclerView recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
 
-        //recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
-
-        GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
+        final GridLayoutManager layoutManager = new GridLayoutManager(this, 2);
         recyclerView.setLayoutManager(layoutManager);
 
-        /*DividerItemDecoration itemDecorator = new DividerItemDecoration(recyclerView.getContext(), DividerItemDecoration.VERTICAL);
-        itemDecorator.setDrawable(recyclerView.getDrawable(getContext(), R.drawable.shape_divider));
-        itemDecorator.setDrawable(,R.drawable.shape_divider);
-        itemDecorator.getItemOffsets();*/
+        final BaseInfo[] myDataset = new BaseInfo[]{
+                new DetailInfo("Квитанции",R.drawable.ic_bill, "- 40 080,55 \u20BD", true),
+                new DetailInfo("Счетчики",R.drawable.ic_counter, "Подайте показания", true),
+                new DetailInfo("Рассрочка",R.drawable.ic_installment, "Сл. платеж 25.02.2018", false),
+                new DetailInfo("Страхование",R.drawable.ic_insurance, "Полис до 12.01.2019", false),
+                new DetailInfo("Интернет и ТВ",R.drawable.ic_tv, "Баланс 350 \u20BD", false),
+                new DetailInfo("Домофон",R.drawable.ic_homephone, "Подключен", false),
+                new DetailInfo("Охрана",R.drawable.ic_guard, "Нет", false),
 
-        /*DividerItemDecoration mDividerItemDecoration = new DividerItemDecoration(recyclerView.getContext(),
-                layoutManager.getOrientation());
-        recyclerView.addItemDecoration(mDividerItemDecoration);*/
+                new DetailInfo("Квитанции",R.drawable.ic_bill, "- 40 080,55 \u20BD", true),
+                new DetailInfo("Счетчики",R.drawable.ic_counter, "Подайте показания", true),
+                new DetailInfo("Рассрочка",R.drawable.ic_installment, "Сл. платеж 25.02.2018", false),
 
-        BaseInfo[] myDataset = new BaseInfo[10];
+                new BaseInfo("Контакты УК и служб", R.drawable.ic_uk_contacts),
+                new BaseInfo("Мои заявки", R.drawable.ic_request),
+                new BaseInfo("Памятка жителя А101", R.drawable.ic_about)
+        };
 
-        myDataset[0]= new DetailInfo("Квитанции",R.drawable.ic_bill, "- 40 080,55 \u20BD", true);
-        myDataset[1]= new DetailInfo("Счетчики",R.drawable.ic_counter, "Подайте показания", true);
-        myDataset[2]= new DetailInfo("Рассрочка",R.drawable.ic_installment, "Сл. платеж 25.02.2018", false);
-        myDataset[3]= new DetailInfo("Страхование",R.drawable.ic_insurance, "Полис до 12.01.2019", false);
-        myDataset[4]= new DetailInfo("Интернет и ТВ",R.drawable.ic_tv, "Баланс 350 \u20BD", false);
-        myDataset[5]= new DetailInfo("Домофон",R.drawable.ic_homephone, "Подключен", false);
-        myDataset[6]= new DetailInfo("Охрана",R.drawable.ic_guard, "Нет", false);
-        final int lastElement = 6;
-
-        myDataset[7] = new BaseInfo("Контакты УК и служб", R.drawable.ic_uk_contacts);
-        myDataset[8] = new BaseInfo("Мои заявки", R.drawable.ic_request);
-        myDataset[9] = new BaseInfo("Памятка жителя А101", R.drawable.ic_about);
-
-        Adapter mAdapter = new Adapter(myDataset);
+        final Adapter mAdapter = new Adapter(myDataset);
+        mAdapter.setCustomItemClickListener(new Adapter.CustomItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Snackbar.make(view, myDataset[position].title, Snackbar.LENGTH_LONG).show();
+            }
+        });
         recyclerView.setAdapter(mAdapter);
+
+
+        float scaleRatio = getResources().getDisplayMetrics().density;
+        float dimenPix = getResources().getDimension(R.dimen.item_offset);
+        int dimenOrginal =(int)(dimenPix/scaleRatio);
+
+        InfoItemGridSpacingDecorator myItemDecoration = new InfoItemGridSpacingDecorator(myDataset.length,dimenOrginal );
+        recyclerView.addItemDecoration(myItemDecoration);
 
         layoutManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {
             @Override
             public int getSpanSize(int position) {
-                if (position>(lastElement-1))
-                    return 2;
+                if (mAdapter.getItemViewType(position) == 1)
+                    return SPAN_SIZE_2;
                 else
-                    return 1;
+                    return SPAN_SIZE_1;
             }
         });
     }
