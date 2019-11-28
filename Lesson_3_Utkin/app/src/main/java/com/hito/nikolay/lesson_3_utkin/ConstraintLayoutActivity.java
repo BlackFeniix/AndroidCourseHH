@@ -26,13 +26,6 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         toolbar.inflateMenu(R.menu.profile_menu);
 
-        /*toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
-            @Override
-            public boolean onMenuItemClick(MenuItem item) {
-                return false;
-            }
-        });
-*/
         toolbar.setNavigationOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view) {
@@ -78,8 +71,6 @@ public class ConstraintLayoutActivity extends AppCompatActivity {
             }
         });
     }
-
-
 
     public static void start(Context context) {
         Intent starter = new Intent(context, ConstraintLayoutActivity.class);
