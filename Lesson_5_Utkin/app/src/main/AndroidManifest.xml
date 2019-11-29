@@ -9,12 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FifthActivity"></activity>
-        <activity android:name=".FourthActivity"
-            android:launchMode="singleTop"/>
+        <activity android:name=".SixActivity" />
+        <activity android:name=".FifthActivity" />
+        <activity
+            android:name=".FourthActivity"
+            android:launchMode="singleTop" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,5 +26,5 @@
             </intent-filter>
         </activity>
     </application>
-
+    <uses-permission android:name="android.permission.INTERNET" />
 </manifest>

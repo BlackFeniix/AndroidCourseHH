@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 public class FifthActivity extends AppCompatActivity {
     Data dataFromEditText;
+    static final String INTENT_KEY = "Text";
+    static final String PARCELABLE_KEY = "Data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +28,7 @@ public class FifthActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String text = editTextFifthActivity.getText().toString();
                 Intent intent = new Intent(FifthActivity.this, ThirdActivity.class);
-                intent.putExtra("Text", text);
+                intent.putExtra(INTENT_KEY, text);
                 setResult(RESULT_OK, intent);
                 finish();
             }
@@ -49,19 +51,13 @@ public class FifthActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putParcelable("Data", dataFromEditText);
+        outState.putParcelable(PARCELABLE_KEY, dataFromEditText);
     }
 
     @Override
     public void onRestoreInstanceState(Bundle state) {
         super.onRestoreInstanceState(state);
-        dataFromEditText =state.getParcelable("Data");
-    }
-
-
-    @Override
-    protected void onResume() {
-        super.onResume();
+        dataFromEditText =state.getParcelable(PARCELABLE_KEY);
         if (dataFromEditText!=null)
         {
             TextView textViewFifthActivity = findViewById(R.id.textViewFifthActivity);

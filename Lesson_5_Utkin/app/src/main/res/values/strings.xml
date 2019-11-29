@@ -8,4 +8,10 @@
     <string name="go_to_4_again">Go to 4 again</string>
     <string name="deliver_result">Deliver result</string>
     <string name="save">Save</string>
+    <string name="go_to_6">Go to 6</string>
+    <string name="textViewToolbar">Услуги управляющей компании будут доступны после сдачи дома</string>
+    <string name="offer_the_service">Предложить услугу</string>
+    <string name="all">Все</string>
+    <string name="service">Услуги</string>
+    <string name="three_dots">⋮</string>
 </resources>

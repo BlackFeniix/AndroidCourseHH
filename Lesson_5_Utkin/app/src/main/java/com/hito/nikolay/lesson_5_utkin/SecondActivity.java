@@ -19,13 +19,12 @@ public class SecondActivity extends AppCompatActivity {
         buttonSecondActivityToThird.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ThirdActivity.startThirdActivity(SecondActivity.this);
+                startActivity(ThirdActivity.createStartIntent(SecondActivity.this));
             }
         });
     }
 
-    public static void startSecondActivity(Context context) {
-        Intent intentToSecondActivity = new Intent(context, SecondActivity.class);
-        context.startActivity(intentToSecondActivity);
+    public static Intent createStartIntent(Context context) {
+        return new Intent(context, SecondActivity.class);
     }
 }

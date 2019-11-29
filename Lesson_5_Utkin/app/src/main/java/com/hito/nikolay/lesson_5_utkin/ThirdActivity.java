@@ -1,7 +1,6 @@
 package com.hito.nikolay.lesson_5_utkin;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.solver.widgets.Snapshot;
 
 import android.content.Context;
 import android.content.Intent;
@@ -24,7 +23,7 @@ public class ThirdActivity extends AppCompatActivity {
         buttonThirdActivityToFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                MainActivity.startFirstActivity(ThirdActivity.this);
+                startActivity(MainActivity.createStartIntent(ThirdActivity.this));
             }
         });
 
@@ -41,21 +40,18 @@ public class ThirdActivity extends AppCompatActivity {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-
+        super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_CODE_FOR_FIFTH) {
-            if(resultCode == RESULT_OK){
-                String result= data.getStringExtra("Text");
+            if (resultCode == RESULT_OK) {
+                String result = data.getStringExtra(FifthActivity.INTENT_KEY);
                 ViewGroup rootView = (ViewGroup) ((ViewGroup) this
                         .findViewById(android.R.id.content)).getChildAt(0);
                 Snackbar.make(rootView, result, Snackbar.LENGTH_LONG).show();
             }
-            if (resultCode == RESULT_CANCELED) {
-            }
         }
     }
 
-    public static void startThirdActivity(Context context) {
-        Intent intentToThirdActivity = new Intent(context, ThirdActivity.class);
-        context.startActivity(intentToThirdActivity);
+    public static Intent createStartIntent(Context context) {
+        return new Intent(context, ThirdActivity.class);
     }
 }

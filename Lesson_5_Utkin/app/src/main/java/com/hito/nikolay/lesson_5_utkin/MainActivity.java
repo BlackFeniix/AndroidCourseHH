@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         buttonFirstActivityToFourth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               FourthActivity.startFourthActivity(MainActivity.this);
+                startActivity(FourthActivity.createStartIntent(MainActivity.this));
             }
         });
 
@@ -30,13 +30,21 @@ public class MainActivity extends AppCompatActivity {
         buttonFirstActivityToSecond.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SecondActivity.startSecondActivity(MainActivity.this);
+                startActivity(SecondActivity.createStartIntent(MainActivity.this));
+
+            }
+        });
+
+        Button buttonFirstActivityToSix = findViewById(R.id.buttonFirstActivityToSix);
+        buttonFirstActivityToSix.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(SixActivity.createStartIntent(MainActivity.this));
             }
         });
     }
 
-    public static void startFirstActivity(Context context) {
-        Intent intentToFirstActivity = new Intent(context, MainActivity.class);
-        context.startActivity(intentToFirstActivity);
+    public static Intent createStartIntent(Context context) {
+        return new Intent(context, MainActivity.class);
     }
 }

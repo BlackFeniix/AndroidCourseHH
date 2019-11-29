@@ -9,7 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -21,13 +20,13 @@ public class FourthActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fourth);
 
         TextView textViewCurrentTime = findViewById(R.id.textViewCurrentTime);
-        textViewCurrentTime.setText(GetCurrentTime());
+        textViewCurrentTime.setText(getCurrentTime());
 
         Button buttonFourthActivityToFourth = findViewById(R.id.buttonFourthToFourth);
         buttonFourthActivityToFourth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startFourthActivity(FourthActivity.this);
+                startActivity(createStartIntent(FourthActivity.this));
             }
         });
     }
@@ -38,24 +37,24 @@ public class FourthActivity extends AppCompatActivity {
         setIntent(intent);
 
         TextView textViewCurrentTime = findViewById(R.id.textViewCurrentTime);
-        textViewCurrentTime.setText(GetCurrentTime());
+        textViewCurrentTime.setText(getCurrentTime());
     }
 
-    private String GetCurrentTime() {
+    private String getCurrentTime() {
         String stringDate = getIntent().getStringExtra("Time");
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy HH:mm:ss");
         Date dateTime = new Date(Long.parseLong(stringDate));
         return dateFormat.format(dateTime);
     }
 
-    public static void startFourthActivity(Context context) {
+    public static Intent createStartIntent(Context context) {
         Intent intentToFourthActivity = new Intent(context, FourthActivity.class);
         intentToFourthActivity.addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
 
         String currentDate = String.valueOf(System.currentTimeMillis());
 
         intentToFourthActivity.putExtra("Time", currentDate);
-        context.startActivity(intentToFourthActivity);
+        return intentToFourthActivity;
     }
 }
 
