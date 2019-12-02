@@ -4,6 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,7 +25,8 @@ public class ViewPagerMainFragment extends Fragment {
         final ViewPager pager= rootView.findViewById(R.id.viewPagerThirdContainer);
         FragmentPagerAdapter adapterViewPager = new MyFragmentPagerAdapter(getChildFragmentManager());
         pager.setAdapter(adapterViewPager);
-
+        DotsIndicator dotsIndicator = rootView.findViewById(R.id.dots_indicator);
+        dotsIndicator.setViewPager(pager);
         return rootView;
     }
 }

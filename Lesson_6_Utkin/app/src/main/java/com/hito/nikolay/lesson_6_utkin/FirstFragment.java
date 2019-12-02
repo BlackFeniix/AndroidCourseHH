@@ -27,11 +27,7 @@ public class FirstFragment extends Fragment {
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
-                //if (item.getTitle().equals(R.string.search))
-                {
                     Toast.makeText(getActivity(), item.getTitle() + " toast", Toast.LENGTH_LONG).show();
-                }
-
                 return false;
             }
         });

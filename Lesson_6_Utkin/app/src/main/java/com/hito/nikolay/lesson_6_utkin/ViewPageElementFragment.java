@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class ViewPageElementFragment extends androidx.fragment.app.Fragment {
 
@@ -44,6 +45,13 @@ public class ViewPageElementFragment extends androidx.fragment.app.Fragment {
         View rootView = inflater.inflate(R.layout.fragment_view_pager, null);
         ImageView imageView = rootView.findViewById(R.id.imageViewPager);
         TextView textView = rootView.findViewById(R.id.textViewPager);
+
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(), mName, Toast.LENGTH_LONG).show();
+            }
+        });
 
         imageView.setImageResource(mImage);
         textView.setText(mName);

@@ -8,21 +8,22 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPagerThirdContainer"
         android:layout_width="0dp"
-        android:layout_height="300dp"
+        android:layout_height="250dp"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.viewpager.widget.PagerTabStrip
-            android:id="@+id/pager_header"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:paddingTop="4dp"
-            android:paddingBottom="4dp"
-            android:visibility="visible" />
-
-    </androidx.viewpager.widget.ViewPager>
-
+    <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+        android:id="@+id/dots_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:dotsCornerRadius="8dp"
+        app:dotsSize="16dp"
+        app:dotsSpacing="4dp"
+        app:dotsWidthFactor="2.5"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPagerThirdContainer"
+        app:layout_constraintEnd_toEndOf="@+id/viewPagerThirdContainer"
+        app:layout_constraintStart_toStartOf="@+id/viewPagerThirdContainer"
+        app:progressMode="true" />
 </androidx.constraintlayout.widget.ConstraintLayout>

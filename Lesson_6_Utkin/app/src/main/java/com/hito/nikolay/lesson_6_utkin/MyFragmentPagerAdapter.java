@@ -1,7 +1,5 @@
 package com.hito.nikolay.lesson_6_utkin;
 
-
-import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -39,6 +37,5 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
         super.destroyItem(container, position, object);
-
     }
 }
