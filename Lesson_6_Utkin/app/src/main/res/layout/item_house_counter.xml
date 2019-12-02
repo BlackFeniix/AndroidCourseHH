@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageViewIconCard"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="28dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@mipmap/ic_water_hot" />
+
+        <TextView
+            android:id="@+id/textViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/charcoal_grey"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imageViewIconCard"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Горячая вода" />
+
+        <TextView
+            android:id="@+id/textViewNewData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:text="@string/new_data"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/imageViewIconCard"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewIconCard" />
+
+        <ImageButton
+            android:id="@+id/imageButtonSend"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/tealish_two"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextNewData"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@mipmap/ic_send" />
+
+        <EditText
+            android:id="@+id/editTextNewData"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="22dp"
+            android:ems="10"
+            android:hint="@string/_35"
+            android:inputType="numberSigned|textPersonName"
+            android:singleLine="true"
+            app:layout_constraintEnd_toStartOf="@+id/imageButtonSend"
+            app:layout_constraintStart_toStartOf="@+id/textViewNewData"
+            app:layout_constraintTop_toBottomOf="@+id/textViewNewData"
+            tools:text="35" />
+
+        <TextView
+            android:id="@+id/textViewFilingDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="21dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNewData"
+            tools:text="Необходимо подать показания до 25.03.18" />
+
+        <TextView
+            android:id="@+id/textViewBarCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="2dp"
+            android:textColor="@android:color/black"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBarCode"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            tools:text="54656553" />
+
+        <ImageView
+            android:id="@+id/imageViewBarCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@+id/textViewName"
+            app:layout_constraintTop_toBottomOf="@+id/textViewName"
+            app:srcCompat="@mipmap/ic_serial_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

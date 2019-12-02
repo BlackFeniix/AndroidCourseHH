@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Lesson_6_Utkin</string>
+    <string name="item_one">Item one</string>
+    <string name="item_two">Item two</string>
+    <string name="item_third">Item third</string>
+    <string name="search">Search</string>
+    <string name="lamp">lamp</string>
+    <string name="fragment_1">Фрагмент 1</string>
+    <string name="show_banner">Показать баннер</string>
+    <string name="hide_banner">Скрыть баннер</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="_35">35</string>
+    <string name="new_data">Новые показания</string>
+    <string name="day">День</string>
+    <string name="night">Ночь</string>
+    <string name="peak">Пик</string>
+    <string name="item_three">Item three</string>
+</resources>
