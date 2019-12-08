@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayoutItemBridge"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/imageViewRecycler"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@drawable/ic_brige_normal" />
+
+    <TextView
+        android:id="@+id/textViewBridgeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:textColor="@color/black_87"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewRecycler"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Биржевой" />
+
+    <TextView
+        android:id="@+id/textViewWorkingTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toEndOf="@+id/imageViewRecycler"
+        app:layout_constraintTop_toBottomOf="@+id/textViewBridgeName"
+        tools:text="2:20 - 5:10" />
+</androidx.constraintlayout.widget.ConstraintLayout>
