@@ -1,15 +1,13 @@
 package com.hito.nikolay.lesson_7_utkin
 
-import android.app.Activity
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-
+import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -38,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             .subscribe(
                 {
                     //Убрать прогресс бар
+                    progressBar.visibility = View.INVISIBLE
                     recyclerViewBridges.adapter = RecyclerViewAdapter(it.bridges,
                         object : RecyclerViewAdapter.Listener {
                             override fun onItemClick(bridge: Bridge) {
@@ -55,6 +54,5 @@ class MainActivity : AppCompatActivity() {
                 }
             )
             .isDisposed
-
     }
 }

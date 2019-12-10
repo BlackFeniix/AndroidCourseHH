@@ -5,14 +5,18 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.text.Html
+import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import kotlinx.android.synthetic.main.activity_bridge_information.*
 
 class ActivityBridgeInformation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bridge_information)
+
+        toolbar.setNavigationOnClickListener { onBackPressed() }
 
         val bridge = intent.getParcelableExtra<Bridge>(BRIDGE_INFO)
         if (bridge != null) {
@@ -21,7 +25,8 @@ class ActivityBridgeInformation : AppCompatActivity() {
 
             val textViewBridgeText = findViewById<TextView>(R.id.textViewBridgeText)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N)
-                textViewBridgeText.text = Html.fromHtml(bridge.description, Html.FROM_HTML_MODE_LEGACY)
+                textViewBridgeText.text =
+                    Html.fromHtml(bridge.description, Html.FROM_HTML_MODE_LEGACY)
             else
                 textViewBridgeText.text = Html.fromHtml(bridge.description)
 
@@ -29,7 +34,11 @@ class ActivityBridgeInformation : AppCompatActivity() {
             textViewPageWorkingTime.text = MyViewHolder.getTimeDivorce(bridge.divorce)
 
             val imageViewBridgePage = findViewById<ImageView>(R.id.imageViewBridgePage)
-            imageViewBridgePage.setImageResource(R.drawable.ic_brige_soon)
+            when (MyViewHolder.isBridgeOpen(bridge.divorce)) {
+                MyViewHolder.BRIDGE_SOON -> imageViewBridgePage.setImageResource(R.drawable.ic_brige_soon)
+                MyViewHolder.BRIDGE_LATE -> imageViewBridgePage.setImageResource(R.drawable.ic_brige_late)
+                MyViewHolder.BRIDGE_OPEN -> imageViewBridgePage.setImageResource(R.drawable.ic_brige_normal)
+            }
         }
     }
 
