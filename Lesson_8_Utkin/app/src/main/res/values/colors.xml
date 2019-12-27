@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="mango_two">#feb92d</color>
+    <color name="mango">#f99d26</color>
+    <color name="warm_grey_three">#747474</color>
+    <color name="black_87">#de000000</color>
+
 </resources>

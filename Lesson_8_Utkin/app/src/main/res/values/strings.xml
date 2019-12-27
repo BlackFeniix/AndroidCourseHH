@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Lesson_8_Utkin</string>
-    <string name="choose_color">Choose color</string>
+    <string name="choose_color">Выбор цвета</string>
     <string name="notes">Заметки</string>
     <string name="search">Search</string>
+    <string name="title">Название</string>
+    <string name="annotation_text">Текст заметки</string>
+    <string name="Cancel">Отмена</string>
 </resources>
